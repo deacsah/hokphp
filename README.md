@@ -1,2 +1,2 @@
-# php-base
-Very light weight PHP MVC framework
+# hokphp
+Very bare PHP MVC framework. Hok!

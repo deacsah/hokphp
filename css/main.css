@@ -1,0 +1,70 @@
+body {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.errors {
+    color: #B10F1B;
+}
+* {
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+.m-bottom-10 {margin-bottom: 10px;}
+
+	    
+.clear {clear:both;}
+.green {color: #ccc}
+/*.green {color: #34bb1f}*/
+.green:hover {color: #1f970d}
+/*.green.selected {color: #107700}*/
+.green.selected {color: #34bb1f}
+.red {color: #ccc}
+/*.red {color: #dc2430}*/
+.red:hover {color: #b10f1b}
+/*.red.selected {color: #8c000A}*/
+.red.selected {color: #dc2430}
+
+.text-center {text-align: center;}
+.fa-6 {font-size: 10em;}
+
+.thumbs {
+	margin: 20px 0 10px 0; 
+}
+.thumb-border {
+}
+.thumb-container {
+	margin-top:10px;
+	padding: 20px;
+	border:1px solid #D3CACA;
+	background-color: #fff;
+}
+.comments {
+	margin-bottom: 20px;
+}
+h2 {
+	margin-top: 0;
+	color: #173355;
+}
+.thumb:hover {
+	cursor: pointer;
+}
+
+.equalit-logo {
+	max-width: 150px;
+}
+.alert-home {
+	margin-bottom: 0;
+}
+.img-container {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+.btn-flat-success {
+	background-color: #34bb1f;
+	background-image: none;
+}
+.btn-flat-success:hover {
+	background-color: #1f970d;
+	background-image: none;
+}
