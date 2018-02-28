@@ -25,7 +25,7 @@ abstract class Controller
 	 * @throws Exception 			If the user is not allowed to run $action
 	 * @return void
 	 */
-	public static function runAction($controller = 'site', $action = 'index')
+	public static function runAction($controller = 'site', $action = 'index', $params = [])
 	{
 		$controllerName = '\hokphp\core\controllers\\'.str_replace("-", "", ucwords($controller)).'Controller';
 		$actionName = 'action'.str_replace("-", "", ucwords($action));
@@ -33,7 +33,7 @@ abstract class Controller
 		$controller = new $controllerName();
 		if($controller->validateAccessControl($action)) {		
 			$controller->beforeAction();
-			$controller->$actionName();
+			call_user_func_array([$controller, $actionName], $params);
 			$controller->afterAction();
 		} else {
 			throw new \Exception('403 Not allowed');
