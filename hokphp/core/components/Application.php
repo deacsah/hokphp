@@ -6,7 +6,9 @@ use hokphp\core\components\Controller;
 use hokphp\core\components\Model;
 
 /**
-* Bootstrap class
+* The Application class
+* This class handles most of the bootstrapping of the whole application.
+* Also contains functions that do not yet have their own classes (like url related functions)
 */
 class Application
 {
