@@ -10,14 +10,34 @@ use hokphp\core\components\Model;
 */
 class Application
 {
+	/**
+	 * The application object is stored here
+	 * @var Application
+	 */
 	public static $app;
 
+	/**
+	 * The database connection resource
+	 * @var ODBC Resource
+	 */
 	public static $dbConnection;
 
+	/**
+	 * Application parameters loaded from the params folder
+	 * @var array
+	 */
 	public $params;
 
+	/**
+	 * The current user's username if logged in
+	 * @var string
+	 */
 	public $username;
 
+	/**
+	 * Wether the current user is logged in or not
+	 * @var boolean
+	 */
 	public $isGuest = true;
 
 	/**
