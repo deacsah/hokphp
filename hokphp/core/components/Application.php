@@ -46,16 +46,10 @@ class Application
 	 */
 	public function handleRequest()
 	{
-		$route = isset($_GET['r']) && !empty($_GET['r']) ? $_GET['r'] : '';
-		$params = '';
-		if (empty($route)) {
-			$controller = 'site';
-			$action = 'index';
-		} else {
-			$ca = explode('/', $route);
-			$controller = $ca[0];
-			$action = isset($ca[1]) ? $ca[1] : 'index';
-		}
+		$routeArray = static::getRoute();
+		$controller = $routeArray['controller'];
+		$action = $routeArray['action'];
+		$params = $routeArray['params'];
 
 		$this->handleSession();
 
@@ -65,6 +59,32 @@ class Application
 			Controller::handleException($e->getMessage());
 		}
 	}
+	
+	/**
+	 * Gets the current route from the r get parameter and returns an array
+	 * including the controller, action, parameters and string route
+	 * @return array
+	 */
+	public static function getRoute()
+	{
+		$params = '';
+		$r = isset($_GET['r']) && !empty($_GET['r']) ? $_GET['r'] : '';
+		if (empty($r)) {
+			$controller = 'site';
+			$action = 'index';
+		} else {
+			$ca = explode('/', $r);
+			$controller = $ca[0];
+			$action = isset($ca[1]) ? $ca[1] : 'index';
+		}
+		$route = $controller.'/'.$action;
+		return [
+			'controller'=>$controller,
+			'action'=>$action,
+			'params'=>$params,
+			'route'=>$route,
+		];
+	}	
 
 	/**
 	 * Handles the current session to decide wether this user is a guest or not
