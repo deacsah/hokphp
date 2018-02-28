@@ -38,8 +38,8 @@ use hokphp\core\components\Controller;
                         Welcome, <strong><?php echo ucwords(Application::$app->username); ?></strong>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="<?php echo Application::createurl('site/index') ?>">Home</a>
+                <li class="<?php echo Application::isCurrentRoute('admin/index') ? 'active' : ''; ?>">
+                    <a href="<?php echo Application::createurl('admin/index') ?>">Dashboard</a>
                 </li>
                 <li>
                     <a href="<?php echo Application::createurl('site/logout') ?>">Logout</a>
