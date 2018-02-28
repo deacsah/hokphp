@@ -54,7 +54,7 @@ class Application
 		$this->handleSession();
 
 		try {
-			Controller::runAction($controller, $action);
+			Controller::runAction($controller, $action, $params);
 		} catch (\Exception $e) {
 			Controller::handleException($e->getMessage());
 		}
