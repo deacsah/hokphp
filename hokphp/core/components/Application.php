@@ -110,4 +110,15 @@ class Application
 	{
 		return static::baseUrl().'?r='.$route;;
 	}
+	
+	/**
+	 * Checks wether the give route is the same as the current
+	 * @param  string  $route The route to check
+	 * @return boolean        
+	 */
+	public static function isCurrentRoute($route)
+	{
+		$routeArray = static::getRoute();
+		return $route == $routeArray['route'] ? true : false;
+	}	
 }
